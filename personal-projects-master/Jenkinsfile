@@ -12,26 +12,26 @@ pipeline {
         maven 'maven-3.8.5-auto'
     }
     stages {
-	 stage('checkoutcode'){
-           steps{
+	 stage('checkoutcode') {
+           steps {
          
              git credentialsId: '9ba1a1b8-a293-492e-857e-0afa2f21d997', branch: "master", url: 'https://github.com/rameshmasagani/personal-projects.git'
            }
          }
     
-         stage('build to maven'){
+         stage('build to maven') {
            steps {
              sh "mvn clean package"
            }
          }
          
-	 stage('Execute sonarqube reports'){
+	 stage('Execute sonarqube reports') {
            steps {
 	     sh "mvn sonar:sonar"
 	   }
 	 }
 	    
-         stage('docker image to BUILD '){
+         stage('docker image to BUILD ') {
            steps {
              sh "docker build -t prasadve0506/personal-projects:${BUILD_NUMBER} ."
            }
