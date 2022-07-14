@@ -12,7 +12,7 @@ pipeline {
         maven 'maven-3.8.5-auto'
     }
     stages {
-	 stage('checkoutcode') {
+	 stage('checkoutcodes') {
            steps {
          
              git credentialsId: '9ba1a1b8-a293-492e-857e-0afa2f21d997', branch: "master", url: 'https://github.com/rameshmasagani/personal-projects.git'
