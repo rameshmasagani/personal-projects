@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
     name: calsoft-deployment
-    namespace: calsoft
+    namespace: demo
 spec:
     replicas: 4
     selector:
