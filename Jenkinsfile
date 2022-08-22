@@ -28,9 +28,18 @@ pipeline {
 		sh "mvn install"
             }
         }
+	    
+	    
+      stage('build to maven') {
+           steps {
+             sh "mvn clean package"
+           }
+         }
+	    
+	    
+	   
     
-    
-    stage('Sonar Scan placeholder'){
+     stage('Sonar Scan placeholder'){
            steps {
              	sh "mvn sonar:sonar"
 		
